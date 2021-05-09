@@ -1138,12 +1138,12 @@
             if (!config.reset.carousel) return;
             try {
                 let msg = [];
-                for(var i = 1; i <= 3; i++){
+                /*for(var i = 1; i <= 3; i++){
                     let fix = BLOD.jsonCheck(await BLOD.xhr("https://api.bilibili.com/x/web-interface/search/default")).data;
-                    let msg[i][0] = fix.show_name;
-                    let msg[i][1] = fix.url;
-                }
-                    
+                    msg.push([fix.url, fix.show_name]);
+                }*/
+				msg.push([1,2]);
+				msg.push([1,2]);
                 let xmltext = '<msg><item tooltip="" bgcolor="#000000" catalog="system" resourceid="2319" srcid="2320" id="314825"><![CDATA[<a href="' + msg[0][0] + '" target="_blank"><font color="#FFFFFF">' + msg[0][1] + '</font></a>]]></item><item tooltip="" bgcolor="#000000" catalog="system" resourceid="2319" srcid="2321" id="314372"><![CDATA[<a href="' + msg[1][0] + '" target="_blank"><font color="#FFFFFF">' + msg[1][1] + '</font></a>]]></item></msg>';
                 let parser = new DOMParser(),
                     responseXML = parser.parseFromString(xmltext, "text/xml");
