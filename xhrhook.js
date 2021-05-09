@@ -1137,7 +1137,7 @@
         static carousel(obj) {
             if (!config.reset.carousel) return;
             try {
-                var msg[];
+                let msg[];
                 for(var i = 1; i <= 3; i++){
                     let fix = BLOD.jsonCheck(await BLOD.xhr("https://api.bilibili.com/x/web-interface/search/default")).data;
                     let msg[i][0] = fix.show_name;
