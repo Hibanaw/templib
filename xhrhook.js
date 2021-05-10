@@ -1139,8 +1139,8 @@
             try {
                 let msg = [];
                 for(let i = 1; i <= 2; i++){
-                    let fix = BLOD.jsonCheck(await BLOD.xhr("https://api.bilibili.com/x/web-interface/search/default")).data;
-                    msg.push([fix.url, fix.show_name]);
+                    let b = BLOD.jsonCheck(await BLOD.xhr("https://api.bilibili.com/x/web-interface/search/default")).data;
+                    msg.push([b.url, b.show_name]);
                 }
                 let xmltext = '<msg><item tooltip="" bgcolor="#000000" catalog="system" resourceid="2319" srcid="2320" id="314825"><![CDATA[<a href="' + msg[0][0] + '" target="_blank"><font color="#FFFFFF">' + msg[0][1] + '</font></a>]]></item><item tooltip="" bgcolor="#000000" catalog="system" resourceid="2319" srcid="2321" id="314372"><![CDATA[<a href="' + msg[1][0] + '" target="_blank"><font color="#FFFFFF">' + msg[1][1] + '</font></a>]]></item></msg>';
                 let parser = new DOMParser(),
